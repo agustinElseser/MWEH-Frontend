@@ -19,7 +19,9 @@ const AppProvider = ({ children }) => {
 
   const exploreMain = async () => {
     try {
-      const { data } = await axios("http://localhost:8080/api/proyects");
+      const { data } = await axios(
+        "https://mweh-api.onrender.com/api/proyects"
+      );
 
       const action = {
         type: types.setProyects,
