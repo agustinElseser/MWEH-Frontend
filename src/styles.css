@@ -571,7 +571,7 @@ body {
 }
 .contain7 {
   width: 80%;
-  /*DISPLAY RESPONSIVE GRID*/
+  
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
 
@@ -583,7 +583,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
 
 .containScroll::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -770,7 +770,7 @@ input::placeholder {
   animation-name: animarsuperior;
   animation-duration: 0.5s;
 }
-/* Add Animation */
+
 @keyframes animatetop {
   from {
     top: -300px;
@@ -809,8 +809,7 @@ h4 {
   cursor: pointer;
 }
 
-body {
-}
+
 
 .click span {
   margin-left: 4px;
@@ -901,13 +900,13 @@ button {
   background: none;
   border: 0;
   color: inherit;
-  /* cursor: default; */
+  
   font: inherit;
   line-height: normal;
   overflow: visible;
   padding: 0;
-  -webkit-appearance: button; /* for input */
-  -webkit-user-select: none; /* for button */
+  
+  -webkit-user-select: none; 
   -moz-user-select: none;
   -ms-user-select: none;
 }
@@ -968,8 +967,7 @@ input:disabled:hover {
   height: 2em;
   fill: black;
 }
-.Cabecera-nav {
-}
+
 .Cabecera-ul {
   display: flex;
   flex-flow: row nowrap;
@@ -1087,7 +1085,7 @@ input:disabled:hover {
 
   .contain7 {
     width: 90%;
-    /*DISPLAY RESPONSIVE GRID*/
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%), 1fr));
     grid-auto-flow: dense;
@@ -1155,7 +1153,7 @@ input:disabled:hover {
   }
   .contain7 {
     width: 90%;
-    /*DISPLAY RESPONSIVE GRID*/
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
     grid-auto-flow: dense;
@@ -1203,7 +1201,7 @@ input:disabled:hover {
   }
   .contain7 {
     width: 90%;
-    /*DISPLAY RESPONSIVE GRID*/
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     grid-auto-flow: dense;
@@ -1260,7 +1258,7 @@ input:disabled:hover {
   }
   .contain7 {
     width: 80%;
-    /*DISPLAY RESPONSIVE GRID*/
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
     grid-auto-flow: dense;
@@ -1270,8 +1268,7 @@ input:disabled:hover {
     padding: 0px;
     padding-top: 30px;
   }
-  .container2 {
-  }
+ 
 }
 .slick-next {
   right: -5px;
