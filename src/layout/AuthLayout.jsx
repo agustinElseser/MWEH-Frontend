@@ -11,11 +11,8 @@ const AuthLayout = () => {
   const explore = useRef(null);
   const about = useRef(null);
   const contact = useRef(null);
-  const { state, exploreMain } = useContext(AppContext);
 
-  useEffect(() => {
-    exploreMain();
-  }, []);
+  const { state } = useContext(AppContext);
 
   const scrollToSection = (elementRef) => {
     window.scrollTo({

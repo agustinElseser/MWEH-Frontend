@@ -10,34 +10,25 @@ import Login from "../../paginas/Login";
 import NuevoPW from "../../paginas/NuevoPW";
 import OlvidePassword from "../../paginas/OlvidePassword";
 import Registrar from "../../paginas/Registrar";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "../context";
+
 import AuthLayout from "../layout/AuthLayout";
 import Privated from "../layout/Privated";
 import { PrivateRoutes } from "./PrivateRoutes";
 
 export const AppRouter = () => {
   const { state, exploreMain, autenticarUsuario } = useContext(AppContext);
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    if (state.logged == false) {
-      //Y Agregar si hay token en local storage
+    exploreMain();
+    if (state.logged === false && token) {
       autenticarUsuario();
-      exploreMain();
     }
   }, []);
-
   return (
     <>
       <Routes>
-        <Route path="/admin" element={<PrivateRoutes />}>
-          <Route path="/admin" element={<Privated />}>
-            <Route path="profile" element={<EditProfile />} />
-            <Route path="myProyects" element={<AdministrarProyectos />} />
-            <Route path="reset-pw" element={<CambiarPw />} />
-            <Route path="favoritos" element={<Favoritos />} />
-          </Route>
-          <Route path="*" element={<Navigate to="/admin" replace />} />
-        </Route>
         <Route path="/" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Registrar />} />
@@ -45,8 +36,17 @@ export const AppRouter = () => {
           <Route path="reset-password/:token" element={<NuevoPW />} />
           <Route path="confirm/:token" element={<ConfirmarCuenta />} />
           <Route path="proyect/:id" element={<Explorar />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/*" element={<Navigate to="/" replace />} />
         </Route>
+        <Route element={<PrivateRoutes />}>
+          <Route path="/admin" element={<Privated />}>
+            <Route path="profile" element={<EditProfile />} />
+            <Route path="myProyects" element={<AdministrarProyectos />} />
+            <Route path="reset-pw" element={<CambiarPw />} />
+            <Route path="favoritos" element={<Favoritos />} />
+          </Route>
+        </Route>
+        <Route path="/*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );

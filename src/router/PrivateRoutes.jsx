@@ -3,7 +3,8 @@ import { Navigate, Outlet } from "react-router-dom";
 import { AppContext } from "../context";
 
 export const PrivateRoutes = () => {
+  const token = localStorage.getItem("token");
   const { state } = useContext(AppContext);
 
-  return state.logged === false ? <Navigate to="/" replace /> : <Outlet />;
+  return !token ? <Navigate to="/" replace /> : <Outlet />;
 };
