@@ -119,7 +119,7 @@ const Formulario = () => {
   const { msg } = alerta;
 
   return (
-    <form className="contain2">
+    <form className="contain10">
       <label className="text2" htmlFor="name">
         NAME
       </label>
