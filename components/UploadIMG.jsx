@@ -44,28 +44,3 @@ const UploadIMG = () => {
 };
 
 export default UploadIMG;
-/*
-    const files = e.target.files;
-    const data = new FormData();
-    data.append("file", files[0]);
-    data.append("upload_preset", "Proyects");
-    setLoading(true);
-    const res = await fetch("http://api.cloudinary.com/v1_1/mostarq/upload", {
-      method: "POST",
-      body: data,
-    });
-    const file = await res.json();
-    setImg(file.secure_url);
-    setLoading(false);
-    
-    
-    .then(result=>console.log(result));
-    
-    cloudinary.config({
-      cloud_name: "mostarq",
-      api_key: "529459294817443",
-      api_secret: "IlfRQHiZvXD_3RnYQbEk4MJ_dHk",
-      secure: true,
-    });
-    const files = e.target.files;
-    await cloudinary.uploader.upload(files, { folder: "Proyects" });*/

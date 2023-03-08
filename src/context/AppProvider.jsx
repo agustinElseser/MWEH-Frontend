@@ -19,18 +19,14 @@ const AppProvider = ({ children }) => {
 
   const exploreMain = async () => {
     try {
-      const { data } = await axios(
-        "https://mweh-api.onrender.com/api/proyects"
-      );
+      const { data } = await clienteAxios.get("/proyects/explore");
 
       const action = {
         type: types.setProyects,
         payload: data,
       };
       dispatch(action);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -42,14 +38,12 @@ const AppProvider = ({ children }) => {
   }, [state.proyects]);
 
   const login = async (email, password) => {
-    console.log(email, password);
     try {
       const { data } = await clienteAxios.post("/users/login", {
         email,
         password,
       });
       localStorage.setItem("token", data.token);
-      console.log(data);
 
       const action = {
         type: types.login,
@@ -60,7 +54,6 @@ const AppProvider = ({ children }) => {
 
       navigate("/admin");
     } catch (error) {
-      console.log(error);
       return {
         msg: error.response.data.msg,
         error: true,
@@ -73,7 +66,7 @@ const AppProvider = ({ children }) => {
       return;
     }
     const token = localStorage.getItem("token");
-    console.log("autentificando");
+
     if (!token) {
       return;
     }
@@ -94,10 +87,7 @@ const AppProvider = ({ children }) => {
       };
 
       dispatch(action);
-      console.log(" TERMINANDO autentificando");
-    } catch (error) {
-      console.log({});
-    }
+    } catch (error) {}
   };
 
   const cerraSesion = () => {
@@ -151,7 +141,7 @@ const AppProvider = ({ children }) => {
 
   const guardarPw = async (datos) => {
     const token = localStorage.getItem("token");
-    console.log(datos);
+
     if (!token) {
       setCargando(false);
       return;
@@ -172,7 +162,6 @@ const AppProvider = ({ children }) => {
         msg: data.msg,
       };
     } catch (error) {
-      console.log(error.response.data.msg);
       return {
         msg: error.response.data.msg,
         error: true,
@@ -203,7 +192,7 @@ const AppProvider = ({ children }) => {
       };
 
       dispatch(action);
-      console.log(action);
+
       return {
         msg: data.msg,
       };
@@ -216,7 +205,6 @@ const AppProvider = ({ children }) => {
   };
 
   const guardarProyect = async (proyect) => {
-    //console.log(proyect);
     const token = localStorage.getItem("token");
     const config = {
       headers: {
@@ -232,7 +220,7 @@ const AppProvider = ({ children }) => {
           proyect,
           config
         );
-        console.log(data);
+
         const action = {
           type: types.editProyect,
           payload: data,
@@ -242,13 +230,11 @@ const AppProvider = ({ children }) => {
         return {
           msg: "GUARDADO CORRECTAMENTE",
         };
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     } else {
       try {
         const { data } = await clienteAxios.post("/proyects", proyect, config);
-        console.log(data);
+
         const action = {
           type: types.addProyect,
           payload: data,
@@ -274,16 +260,14 @@ const AppProvider = ({ children }) => {
           },
         };
         const { data } = await clienteAxios.delete(`/proyects/${id}`, config);
-        console.log(data);
+
         const action = {
           type: types.deleteProyect,
           payload: data,
         };
 
         dispatch(action);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     }
   };
 

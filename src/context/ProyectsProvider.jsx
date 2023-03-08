@@ -43,9 +43,7 @@ export const ProyectsProvider = ({ children }) => {
           proyectState._id === data._id ? data : proyectState
         );
         setProyects(proyectsEdit);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     } else {
       try {
         const { data } = await clienteAxios.post("/proyects", proyect, config);

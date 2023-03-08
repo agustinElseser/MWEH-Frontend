@@ -18,7 +18,6 @@ const Privated = ({ children }) => {
 
   useEffect(() => {
     //autenticarUsuario();
-    console.log("asd");
   }, []);
 
   const obtenerMisProyects = async () => {
@@ -51,8 +50,7 @@ const Privated = ({ children }) => {
           <Outlet />
 
           <p className="text8">
-            Desarrollado por Agustin Elseser ® 2022. Todos los derechos
-            reservados.
+            Developed by Agustin Elseser ® 2023. All rights reserved.
           </p>
         </div>
       </div>

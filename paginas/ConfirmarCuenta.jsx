@@ -14,7 +14,6 @@ const ConfirmarCuenta = () => {
 
   const params = useParams();
   const { token } = params;
-  console.log(token);
 
   useEffect(() => {
     const confirmarCuenta = async () => {
@@ -28,7 +27,6 @@ const ConfirmarCuenta = () => {
           msg: error.response.data.msg,
           error: true,
         });
-        console.log("se ejecuto el error igual");
       }
       setCargando(false);
     };

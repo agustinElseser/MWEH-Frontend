@@ -30,6 +30,9 @@ const Login = () => {
     const res = await login(email, password);
 
     setAlerta(res);
+    setTimeout(() => {
+      setAlerta({});
+    }, 2000);
   };
 
   const { msg } = alerta;

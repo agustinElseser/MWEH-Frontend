@@ -75,7 +75,6 @@ const Formulario = () => {
 
     const arrayimg = [...proyect.proyectImg];
     const files = img;
-    console.log(files);
 
     const url = "https://api.cloudinary.com/v1_1/mostarq/image/upload";
     const formData = new FormData();
@@ -91,9 +90,7 @@ const Formulario = () => {
       })
         .then((res) => res.json())
         .then((response) => {
-          console.log(arrayimg);
           arrayimg.push(response.secure_url);
-          console.log(arrayimg);
         });
     }
 

@@ -8,9 +8,10 @@ const Fooder = () => {
       <div className="fooder">
         <Contacto />
         <p className="text7">
-          Desarrollado por Agustin Elseser ® 2022. Todos los derechos
-          reservados.
+          Developed by Agustin Elseser ® 2023. All rights reserved.
         </p>
+        <br />
+        <br />
       </div>
     </>
   );

@@ -17,8 +17,11 @@ const EditProfile = () => {
     setObjValue({ value2: false, value1: true });
     const { name, email } = perfil;
 
-    if ([name & email].includes("")) {
+    if (name == "" && email == "") {
       setAlerta({ msg: "THERE ARE EMPTY FIELDS", error: true });
+      setTimeout(() => {
+        setAlerta({});
+      }, 2000);
       return;
     } else {
       const respuesta = await actualizarPerfil(perfil);

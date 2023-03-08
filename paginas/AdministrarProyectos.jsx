@@ -15,7 +15,7 @@ const AdministrarProyectos = () => {
 
     return () => window.removeEventListener("resize", actualizarViewportSize);
   }, []);
-  console.log(viewportSize);
+
   return (
     <>
       <div

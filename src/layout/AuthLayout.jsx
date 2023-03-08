@@ -1,5 +1,5 @@
 import { Outlet, Link, NavLink } from "react-router-dom";
-import { useContext, useEffect, useRef} from "react";
+import { useContext, useEffect, useRef } from "react";
 import SimpleSlider2 from "../../components/Slider2";
 import MostrarProyectos from "../../components/ExplorarProyects";
 import Fooder from "../../components/Fooder";
@@ -69,8 +69,9 @@ const AuthLayout = () => {
       <div ref={explore} className="a0">
         <MostrarProyectos />
       </div>
+
       <div ref={about} className="a0 ">
-        <p className="text10">
+        <div className="text10">
           <br />
           <br />
           <hr />
@@ -87,7 +88,7 @@ const AuthLayout = () => {
           <hr />
           <br />
           <br />
-        </p>
+        </div>
 
         <p className="text11">
           <span className="italy">

@@ -17,7 +17,6 @@ import Privated from "../layout/Privated";
 
 export const AppRouter = () => {
   const { state, exploreMain, autenticarUsuario } = useContext(AppContext);
-  console.log(state);
 
   useEffect(() => {
     if (state.logged == false) {
