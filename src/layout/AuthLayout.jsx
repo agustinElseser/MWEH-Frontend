@@ -1,10 +1,11 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { useContext, useEffect, useRef } from "react";
 import SimpleSlider2 from "../../components/Slider2";
 import MostrarProyectos from "../../components/ExplorarProyects";
 import Fooder from "../../components/Fooder";
 import { AppContext } from "../context/AppContext";
 import Menu from "../../components/Menu";
+import ButtonInicio from "../../components/ButtonInicio";
 
 const AuthLayout = () => {
   const explore = useRef(null);
@@ -26,6 +27,7 @@ const AuthLayout = () => {
   return (
     <>
       <Menu className="mobile-only" />
+
       <div>
         <div className="a1">
           <SimpleSlider2 />
@@ -65,12 +67,12 @@ const AuthLayout = () => {
           </div>
         </div>
       </div>
-
-      <div ref={explore} className="a0">
+      <ButtonInicio />
+      <div id="explore" ref={explore} className="a0">
         <MostrarProyectos />
       </div>
 
-      <div ref={about} className="a0 ">
+      <div id="about" ref={about} className="a0 ">
         <div className="text10">
           <br />
           <br />
@@ -183,7 +185,7 @@ const AuthLayout = () => {
         <br />
       </div>
 
-      <div ref={contact}>
+      <div id="contact" ref={contact}>
         <Fooder />
       </div>
     </>

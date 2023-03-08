@@ -45,11 +45,17 @@ const Registrar = () => {
         msg: "CREATED CORRECTLY, CHECK EMAIL",
         error: false,
       });
+      setTimeout(() => {
+        setAlerta({});
+      }, 2000);
     } catch (error) {
       setAlerta({
         msg: error.response.data.msg,
         error: true,
       });
+      setTimeout(() => {
+        setAlerta({});
+      }, 2000);
     }
   };
   const navigate = useNavigate();

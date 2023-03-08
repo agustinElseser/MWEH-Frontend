@@ -28,29 +28,18 @@ const Menu = () => {
 
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
-          <NavLink
-            className="Cabecera-li"
-            onClick={() => scrollToSection(explore)}
-            to={""}
-          >
+          <a className="Cabecera-li" href="#">
+            INICIO
+          </a>
+          <a className="Cabecera-li" href="#explore">
             EXPLORE
-          </NavLink>
-          <NavLink
-            className="Cabecera-li"
-            onClick={() => scrollToSection(about)}
-            to={""}
-          >
+          </a>
+          <a className="Cabecera-li" href="#about">
             ABOUT
-          </NavLink>
-
-          <NavLink
-            className="Cabecera-li"
-            onClick={() => scrollToSection(contact)}
-            to={""}
-          >
+          </a>
+          <a className="Cabecera-li" href="#contact">
             CONTACT
-          </NavLink>
-
+          </a>
           {state.logged == false ? (
             <NavLink className="Cabecera-li" to="/login">
               LOGIN

@@ -1,8 +1,9 @@
 import "./styles.css";
-import { BrowserRouter } from "react-router-dom";
+
 import { AppRouter } from "./router/AppRouter";
 import { ProyectsProvider } from "./context/ProyectsProvider";
 import { AppProvider } from "./context/AppProvider";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (

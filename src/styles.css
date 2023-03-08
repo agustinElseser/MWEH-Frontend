@@ -28,6 +28,7 @@ body {
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
+  z-index: 1;
 }
 .a2 {
   width: 100%;
@@ -271,6 +272,7 @@ a:visited {
   margin: auto;
   margin-bottom: 50px;
   background: rgba(255, 255, 255, 0.15);
+  z-index: 999;
 }
 
 .nav2 {
@@ -286,6 +288,7 @@ a:visited {
   border-style: solid;
   background: rgba(255, 255, 255, 0.35);
   margin-top: 20px;
+  z-index: 9999;
 }
 
 .sections {
@@ -963,11 +966,11 @@ input:disabled:hover {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
   color: white;
   backdrop-filter: blur(0.18rem) opacity(1);
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -1312,4 +1315,13 @@ input:disabled:hover {
 .margin {
   height: 20px;
   margin-top: 20px;
+}
+
+.buttonInicio {
+  width: 40px;
+  color: rgba(255, 255, 255, 0.35);
+  position: fixed;
+  top: 94vh;
+  left: 94vw;
+  z-index: 9;
 }
