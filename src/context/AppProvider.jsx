@@ -101,7 +101,6 @@ const AppProvider = ({ children }) => {
     setTimeout(() => {
       navigate("/");
     }, 10);
-    toastify;
   };
 
   const actualizarPerfil = async (datos) => {

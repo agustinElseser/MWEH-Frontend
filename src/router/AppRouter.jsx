@@ -26,9 +26,22 @@ export const AppRouter = () => {
       autenticarUsuario();
     }
   }, []);
+
   return (
     <>
       <Routes>
+        <Route element={<PrivateRoutes />}>
+          <Route path="/admin" element={<Privated />}>
+            <Route path="profile" element={<EditProfile />} />
+            <Route path="myProyects" element={<AdministrarProyectos />} />
+            <Route path="reset-pw" element={<CambiarPw />} />
+            <Route path="favoritos" element={<Favoritos />} />
+            <Route
+              path="/admin/*"
+              element={<Navigate to="/admin" replace />}
+            ></Route>
+          </Route>
+        </Route>
         <Route path="/" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Registrar />} />
@@ -36,17 +49,8 @@ export const AppRouter = () => {
           <Route path="reset-password/:token" element={<NuevoPW />} />
           <Route path="confirm/:token" element={<ConfirmarCuenta />} />
           <Route path="proyect/:id" element={<Explorar />} />
-          <Route path="/*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
-        <Route element={<PrivateRoutes />}>
-          <Route path="/admin" element={<Privated />}>
-            <Route path="profile" element={<EditProfile />} />
-            <Route path="myProyects" element={<AdministrarProyectos />} />
-            <Route path="reset-pw" element={<CambiarPw />} />
-            <Route path="favoritos" element={<Favoritos />} />
-          </Route>
-        </Route>
-        <Route path="/*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );
