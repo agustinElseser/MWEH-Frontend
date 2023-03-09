@@ -32,10 +32,10 @@ export const AppRouter = () => {
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route path="/admin" element={<Privated />}>
-            <Route path="profile" element={<EditProfile />} />
-            <Route path="myProyects" element={<AdministrarProyectos />} />
-            <Route path="reset-pw" element={<CambiarPw />} />
-            <Route path="favoritos" element={<Favoritos />} />
+            <Route path="/profile" element={<EditProfile />} />
+            <Route path="/myProyects" element={<AdministrarProyectos />} />
+            <Route path="/reset-pw" element={<CambiarPw />} />
+            <Route path="/favoritos" element={<Favoritos />} />
             <Route
               path="/admin/*"
               element={<Navigate to="/admin" replace />}
@@ -43,12 +43,12 @@ export const AppRouter = () => {
           </Route>
         </Route>
         <Route path="/" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Registrar />} />
-          <Route path="reset-password" element={<OlvidePassword />} />
-          <Route path="reset-password/:token" element={<NuevoPW />} />
-          <Route path="confirm/:token" element={<ConfirmarCuenta />} />
-          <Route path="proyect/:id" element={<Explorar />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registrar />} />
+          <Route path="/reset-password" element={<OlvidePassword />} />
+          <Route path="/reset-password/:token" element={<NuevoPW />} />
+          <Route path="/confirm/:token" element={<ConfirmarCuenta />} />
+          <Route path="/proyect/:id" element={<Explorar />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
