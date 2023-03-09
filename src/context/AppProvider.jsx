@@ -98,9 +98,9 @@ const AppProvider = ({ children }) => {
     };
 
     dispatch(action);
-    setTimeout(() => {
-      navigate("/");
-    }, 10);
+    // setTimeout(() => {
+    //   navigate("/");
+    // }, 10);
   };
 
   const actualizarPerfil = async (datos) => {
