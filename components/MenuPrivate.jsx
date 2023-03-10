@@ -28,22 +28,38 @@ const MenuPrivate = () => {
 
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
-          <NavLink className="Cabecera-li" to={"/"}>
+          <NavLink className="Cabecera-li" to={"/"} onClick={toggleMenu}>
             MAIN
           </NavLink>
-          <NavLink className="Cabecera-li" to="/admin/myProyects">
+          <NavLink
+            className="Cabecera-li"
+            to="/admin/myProyects"
+            onClick={toggleMenu}
+          >
             MY PROJECTS
           </NavLink>
 
-          <NavLink className="Cabecera-li" to="/admin/favoritos">
+          <NavLink
+            className="Cabecera-li"
+            to="/admin/favoritos"
+            onClick={toggleMenu}
+          >
             FAVORITES
           </NavLink>
 
-          <NavLink className="Cabecera-li" to="/admin/profile">
+          <NavLink
+            className="Cabecera-li"
+            to="/admin/profile"
+            onClick={toggleMenu}
+          >
             PROFILE
           </NavLink>
 
-          <NavLink className="Cabecera-li" to="/" onClick={cerraSesion}>
+          <NavLink
+            className="Cabecera-li"
+            to="/"
+            onClick={(cerraSesion, toggleMenu)}
+          >
             SIGN OFF
           </NavLink>
         </ul>

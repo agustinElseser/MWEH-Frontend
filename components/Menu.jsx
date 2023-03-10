@@ -28,24 +28,24 @@ const Menu = () => {
 
       <nav className={`Cabecera-nav ${menu ? "isActive" : ""}`}>
         <ul className="Cabecera-ul">
-          <a className="Cabecera-li" href="#">
+          <a className="Cabecera-li" href="#" onClick={toggleMenu}>
             INICIO
           </a>
-          <a className="Cabecera-li" href="#explore">
+          <a className="Cabecera-li" href="#explore" onClick={toggleMenu}>
             EXPLORE
           </a>
-          <a className="Cabecera-li" href="#about">
+          <a className="Cabecera-li" href="#about" onClick={toggleMenu}>
             ABOUT
           </a>
-          <a className="Cabecera-li" href="#contact">
+          <a className="Cabecera-li" href="#contact" onClick={toggleMenu}>
             CONTACT
           </a>
           {state.logged == false ? (
-            <NavLink className="Cabecera-li" to="/login">
+            <NavLink className="Cabecera-li" to="/login" onClick={toggleMenu}>
               LOGIN
             </NavLink>
           ) : (
-            <NavLink className="Cabecera-li" to="/admin">
+            <NavLink className="Cabecera-li" to="/admin" onClick={toggleMenu}>
               PROFILE
             </NavLink>
           )}

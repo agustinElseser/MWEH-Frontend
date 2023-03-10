@@ -365,7 +365,7 @@ a:visited {
   border-color: black;
   border: 1px;
   border-style: solid;
-  padding: 10px 10px 10px 10px;
+  padding: 20px 20px 20px 20px;
   background-color: #ededed;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238e8e8e' fill-opacity='0.47' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
@@ -398,7 +398,7 @@ form input {
   width: 100%;
   margin-bottom: 10px;
   font-size: 16px;
-  padding: 2px;
+  padding: 6px;
   border-radius: 0;
   border-color: black;
   border: 1px;
@@ -407,7 +407,18 @@ form input {
   outline: 0;
   background: rgba(0, 0, 0, 0.15);
 }
-
+form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 6px;
+  border-radius: 0;
+  border-color: black;
+  border: 1px;
+  border-style: solid;
+  background: none;
+  outline: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
 form input::placeholder {
   color: black;
   font-family: "Raleway", sans-serif;
@@ -573,13 +584,16 @@ body {
   border: 1px;
   border-style: solid;
 }
-.card div {
-  position: absolute;
+
+.cardDiv {
   width: 100%;
-  height: 25%;
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(0.2rem);
-  padding: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .card img {
@@ -858,6 +872,13 @@ span:active {
   border-radius: 50%;
   cursor: pointer;
 }
+.buttonFav {
+  width: 25px;
+  height: 25px;
+}
+.buttonFav:hover {
+  transform: scale(1.2);
+}
 
 .active span,
 .active-2 span {
@@ -993,6 +1014,7 @@ input:disabled:hover {
 }
 .Cabecera-li {
   margin: 0 0.5em;
+  cursor: pointer;
   color: black;
 }
 @media screen and (max-width: 800px) {
@@ -1033,6 +1055,10 @@ input:disabled:hover {
   }
   .desktop-only {
     display: none;
+  }
+  .buttonFav {
+    width: 18px;
+    height: 18px;
   }
   .logo {
     font-size: 3vh;
@@ -1158,6 +1184,10 @@ input:disabled:hover {
     width: 90%;
     height: 80px;
   }
+  .buttonFav {
+    width: 20px;
+    height: 20px;
+  }
   .nav2 {
     width: 90%;
     min-height: 80px;
@@ -1245,6 +1275,10 @@ input:disabled:hover {
     padding: 0px;
     padding-top: 30px;
   }
+  .buttonFav {
+    width: 23px;
+    height: 23px;
+  }
 }
 
 @media only screen and (min-width: 1451px) {
@@ -1323,5 +1357,5 @@ input:disabled:hover {
   position: fixed;
   top: 94vh;
   left: 94vw;
-  z-index: 9;
+  z-index: 0;
 }
