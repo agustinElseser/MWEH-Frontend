@@ -7,13 +7,13 @@ import { BrowserRouter, HashRouter } from "react-router-dom";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <AppProvider>
         <ProyectsProvider>
           <AppRouter />
         </ProyectsProvider>
       </AppProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
