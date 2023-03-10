@@ -32,10 +32,10 @@ export const AppRouter = () => {
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route path="/admin" element={<Privated />}>
-            <Route path="/profile" element={<EditProfile />} />
-            <Route path="/myProyects" element={<AdministrarProyectos />} />
-            <Route path="/reset-pw" element={<CambiarPw />} />
-            <Route path="/favoritos" element={<Favoritos />} />
+            <Route path="profile" element={<EditProfile />} />
+            <Route path="myProyects" element={<AdministrarProyectos />} />
+            <Route path="reset-pw" element={<CambiarPw />} />
+            <Route path="favoritos" element={<Favoritos />} />
             <Route
               path="/admin/*"
               element={<Navigate to="/admin" replace />}
