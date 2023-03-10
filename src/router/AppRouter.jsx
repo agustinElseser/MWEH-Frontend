@@ -15,6 +15,7 @@ import { AppContext } from "../context";
 import AuthLayout from "../layout/AuthLayout";
 import Privated from "../layout/Privated";
 import { PrivateRoutes } from "./PrivateRoutes";
+import { PublicRoutes } from "./PublicRoutes";
 
 export const AppRouter = () => {
   const { state, exploreMain, autenticarUsuario } = useContext(AppContext);
@@ -42,7 +43,8 @@ export const AppRouter = () => {
             ></Route>
           </Route>
         </Route>
-        <Route path="/" element={<AuthLayout />}>
+        <Route path="/" element={<PublicRoutes />}>
+          <Route path="/inicio" element={<AuthLayout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registrar />} />
           <Route path="/reset-password" element={<OlvidePassword />} />
