@@ -4,5 +4,6 @@ import App from "./App";
 import "./index.css";
 import "./slider.css";
 
-const divRoot = ReactDOM.createRoot(document.querySelector("#root"));
-divRoot.render(<App />);
+import { hydrateRoot } from "react-dom/client";
+const container = document.getElementById("root");
+const root = hydrateRoot(container, <App tab="home" />);
