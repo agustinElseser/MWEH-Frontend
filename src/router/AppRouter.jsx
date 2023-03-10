@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useLayoutEffect } from "react";
 import { Navigate, NavLink, Outlet, Route, Routes } from "react-router-dom";
 import AdministrarProyectos from "../../paginas/AdministrarProyectos";
 import CambiarPw from "../../paginas/CambiarPw";
@@ -15,13 +15,12 @@ import { AppContext } from "../context";
 import AuthLayout from "../layout/AuthLayout";
 import Privated from "../layout/Privated";
 import { PrivateRoutes } from "./PrivateRoutes";
-import { PublicRoutes } from "./PublicRoutes";
 
 export const AppRouter = () => {
   const { state, exploreMain, autenticarUsuario } = useContext(AppContext);
   const token = localStorage.getItem("token");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     exploreMain();
     if (state.logged === false && token) {
       autenticarUsuario();
@@ -43,14 +42,17 @@ export const AppRouter = () => {
             ></Route>
           </Route>
         </Route>
-        <Route path="/" element={<PublicRoutes />}>
-          <Route path="/inicio" element={<AuthLayout />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Registrar />} />
-          <Route path="/reset-password" element={<OlvidePassword />} />
-          <Route path="/reset-password/:token" element={<NuevoPW />} />
-          <Route path="/confirm/:token" element={<ConfirmarCuenta />} />
-          <Route path="/proyect/:id" element={<Explorar />} />
+        <Route path="/" element={<AuthLayout />}>
+          {!state.logged ? (
+            <Route>
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Registrar />} />
+              <Route path="reset-password" element={<OlvidePassword />} />
+              <Route path="reset-password/:token" element={<NuevoPW />} />
+              <Route path="confirm/:token" element={<ConfirmarCuenta />} />
+            </Route>
+          ) : null}
+          <Route path="proyect/:id" element={<Explorar />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
