@@ -6,5 +6,5 @@ export const PrivateRoutes = () => {
   const token = localStorage.getItem("token");
   const { state } = useContext(AppContext);
 
-  return !token ? <Navigate to="/" replace /> : <Outlet />;
+  return !token && !state.logged ? <Navigate to="/" replace /> : <Outlet />;
 };
