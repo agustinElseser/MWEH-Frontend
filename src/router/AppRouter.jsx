@@ -20,7 +20,7 @@ export const AppRouter = () => {
   const { state, exploreMain, autenticarUsuario } = useContext(AppContext);
   const token = localStorage.getItem("token");
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     exploreMain();
     if (state.logged === false && token) {
       autenticarUsuario();
