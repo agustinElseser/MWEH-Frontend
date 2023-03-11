@@ -55,11 +55,7 @@ const MenuPrivate = () => {
             PROFILE
           </NavLink>
 
-          <NavLink
-            className="Cabecera-li"
-            to="/"
-            onClick={(cerraSesion, toggleMenu)}
-          >
+          <NavLink className="Cabecera-li" to="/" onClick={cerraSesion}>
             SIGN OFF
           </NavLink>
         </ul>
