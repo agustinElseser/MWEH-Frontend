@@ -8,7 +8,6 @@ import "./slider.css";
 // const container = document.getElementById("root");
 // const root = hydrateRoot(container, <App tab="home" />);
 
-import { createRoot } from "react-dom/client";
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(<App />);
