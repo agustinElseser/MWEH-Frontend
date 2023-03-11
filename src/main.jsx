@@ -4,6 +4,11 @@ import App from "./App";
 import "./index.css";
 import "./slider.css";
 
-import { hydrateRoot } from "react-dom/client";
+// import { hydrateRoot } from "react-dom/client";
+// const container = document.getElementById("root");
+// const root = hydrateRoot(container, <App tab="home" />);
+
+import { createRoot } from "react-dom/client";
 const container = document.getElementById("root");
-const root = hydrateRoot(container, <App tab="home" />);
+const root = createRoot(container);
+root.render(<App />);
